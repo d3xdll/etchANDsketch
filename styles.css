@@ -1,15 +1,18 @@
-#mainBoard{
-  height: 500px;
-  
+*{
+  box-sizing: border-box;
+}
+body {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  align-content: center;
+  align-items: center;
+}
+#mainBoard{
+  height: 500px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid blueviolet;
+  margin-top: 20px;
 }
 
-#prop{
-  background-color: blue;
-}

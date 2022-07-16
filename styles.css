@@ -1,9 +1,15 @@
 #mainBoard{
   height: 500px;
-  width: 500px;
+  
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
   align-content: center;
+  border: 1px solid blueviolet;
+}
+
+#prop{
+  background-color: blue;
 }

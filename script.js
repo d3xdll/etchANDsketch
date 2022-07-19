@@ -1,11 +1,28 @@
 const mainSquare=document.querySelector('#mainBoard');
+let divsColor="";
 
-
-const createBtn=document.querySelector('button');
+const createBtn=document.querySelector('#btn');
 console.log(createBtn);
 createBtn.addEventListener('click', ()=>{
-  let divsCount=document.querySelector('input').value;
-  createDesk(divsCount)});
+  let divsCount=document.querySelector('#numberOfDivs').value;
+  createDesk(divsCount)}
+);
+
+  
+const blackBtn=document.getElementById('blackWhite');
+blackBtn.addEventListener('click', ()=>changeColor('white'));
+
+
+const randomBtn=document.getElementById('randomColors');
+randomBtn.addEventListener('click', changeRandom);
+
+const userClrBtn=document.getElementById('pickColor');
+userClrBtn.addEventListener('click', ()=>{
+  let userColor=document.querySelector('#colorPicker').value;
+  changeColor(userColor);
+});
+
+
 
 
 // checks nodelist
@@ -32,7 +49,7 @@ function createDivs(divsCount){
       squares.style.border="0.5px solid black";
       flexDivs.appendChild(squares);}
     }
-    change();
+    // change();
 }
 
 // checks if some divs is already on a board, if true > removes and creates given number
@@ -55,9 +72,17 @@ function createDesk(divsCount){
     return hoverDivs;
   }
 
-  function change(){
+  function changeRandom(){
     selectDivs().forEach((element) =>{
       element.addEventListener('mouseover', ()=>
       element.style.backgroundColor=randomColor());
+    });
+  }
+
+
+  function changeColor(colorScheme){
+    selectDivs().forEach((element) =>{
+      element.addEventListener('mouseover', ()=>
+      element.style.backgroundColor=colorScheme);
     });
   }
